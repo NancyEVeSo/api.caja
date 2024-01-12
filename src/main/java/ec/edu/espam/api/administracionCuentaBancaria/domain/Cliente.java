@@ -13,16 +13,19 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity (name = "cliente")
-public class Cliente extends Persona{
+@Entity(name = "cliente")
+public class Cliente extends Persona {
+
     @Column(name = "clave")
-    @NotEmpty(message = "Clave es requerido")
-   @Size(min = 4, message = "La clave debe contener al menos 4 caracteres")
+    @NotEmpty(message = "Clave es requerida")
+    @Size(min = 4, message = "Clave debe contener al menos 4 caracteres")
     private String clave;
+
     @Column(name = "estado")
     @NotNull(message = "Estado es requerido")
     private Boolean estado;
-    @OneToMany(mappedBy = "cliente")
-    private List<Cuenta> cuentas;
 
+    /*@OneToMany(mappedBy = "cliente")
+    private List<Cuenta> cuentas;*/
 }
+
