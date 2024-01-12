@@ -27,7 +27,7 @@ public class CuentaControlador {
 
     @PutMapping("/{id}")
     public ResponseEntity<Cuenta> actualizarCuenta(@PathVariable Long id, @RequestBody @Valid Cuenta cuenta) {
-        return new ResponseEntity<>(cuentaServicio.actualizar(id, cuenta), HttpStatus.CREATED);
+        return new ResponseEntity<>(cuentaServicio.actualizar(id, cuenta), HttpStatus.OK);
     }
 
 
